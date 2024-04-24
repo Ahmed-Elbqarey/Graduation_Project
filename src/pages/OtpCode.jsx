@@ -18,7 +18,9 @@ function OtpCode() {
           </div>
           <div className="form">
             <input type="number" maxLength={6} placeholder="Enter Code" />
-            <button className="action_btn">next</button>
+            <Link to="/confirmePassword" className="action_btn">
+              Next
+            </Link>
           </div>
         </div>
       </div>

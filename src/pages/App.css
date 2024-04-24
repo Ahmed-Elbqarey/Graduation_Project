@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
   background-color: #eee;
@@ -114,6 +115,10 @@ body {
   text-transform: capitalize;
   font-size: 19px;
   cursor: pointer;
+}
+.nav a{
+  text-decoration: none;
+  color: black;
 }
 .block {
   background-color: white;
@@ -274,10 +279,10 @@ overflow: hidden;
   .nav ul {
     width: 100%;
     flex-wrap: wrap;
-    padding: 15px 80px;
+    padding: 15px 45px;
   }
   .nav ul li {
-    margin: 15px 0;
+    margin: 15px;
   }
   .block {
     width: 100%;

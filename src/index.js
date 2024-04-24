@@ -9,6 +9,7 @@ import SignIn from "./pages/Sign_In";
 import ForgetPassword from "./pages/ForgetPassword";
 import OtpCode from "./pages/OtpCode";
 import NewPass from "./pages/NewPass";
+import ConfirmedPass from "./pages/ConfirmedPassword";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/newpass",
     element: <NewPass />,
+  },
+  {
+    path: "/confirmePassword",
+    element: <ConfirmedPass />,
   },
 ]);
 

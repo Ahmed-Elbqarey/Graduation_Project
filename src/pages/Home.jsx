@@ -27,13 +27,21 @@ function Home() {
       </div>
       <div className="nav">
         <ul>
-          <li>key benefits</li>
-          <li>features</li>
-          <li>getting started</li>
-          <li>discover more</li>
+          <li>
+            <a href="#key">key benefits</a>
+          </li>
+          <li>
+            <a href="#features">features</a>
+          </li>
+          <li>
+            <a href="#started">getting started</a>
+          </li>
+          <li>
+            <a href="#more">discover more</a>
+          </li>
         </ul>
       </div>
-      <div className="block">
+      <div className="block" id="key">
         <div className="head">
           <h2>key benefits</h2>
           <p>Foster copresence in a world of flexible work</p>
@@ -67,7 +75,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="block">
+      <div className="block" id="features">
         <div className="head">
           <h2>FEATURES</h2>
           <p>Elevate team engagement</p>
@@ -102,7 +110,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="started">
+      <div className="started" id="started">
         <h3>getting started</h3>
         <p>Try Edu verse for free </p>
 
@@ -112,7 +120,7 @@ function Home() {
         </p>
         <button className="download_btn">download</button>
       </div>
-      <div className="discover">
+      <div className="discover" id="more">
         <h3>discover more</h3>
         <p>
           Get the latest news and information about Edu Verse features and
