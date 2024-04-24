@@ -302,4 +302,14 @@ overflow: hidden;
   .discover {
     padding: 30px 0;
   }
+  .container{
+    width: 100%;
+    flex-direction: column;
+  }
+  .container .parent{
+    width: 100%;
+  }
+  .container img{
+    width: 80%;
+  }
 }

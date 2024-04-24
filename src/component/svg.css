@@ -2,3 +2,9 @@
 position: absolute;
 top: 50px;
 }
+@media (max-width:480px) {
+    .angle{
+        top: 0;
+     left: -90px;
+    }
+}
