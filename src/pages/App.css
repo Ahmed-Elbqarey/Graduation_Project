@@ -113,6 +113,7 @@ body {
   list-style: none;
   text-transform: capitalize;
   font-size: 19px;
+  cursor: pointer;
 }
 .block {
   background-color: white;
@@ -185,7 +186,7 @@ body {
 }
 .discover h3 {
   text-transform: capitalize;
-    font-size: 50px;
+  font-size: 50px;
 }
 .discover .blog_btn {
   background-color: white;
@@ -196,4 +197,109 @@ body {
   text-transform: uppercase;
   border: none;
   margin-top: 60px;
+}
+@media (max-width: 1150px) {
+  .block {
+    width: 90%;
+  }
+  .block .body {
+    /* flex-direction: column; */
+  }
+}
+@media (max-width: 880px) {
+  .header img {
+    left: -70px;
+  }
+  .main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .main h1 {
+    font-size: 40px;
+  }
+  .main p {
+    font-size: 20px;
+    width: 100%;
+  }
+  .main img {
+    width: 320px;
+  }
+  .nav ul {
+    width: 100%;
+    font-size: 18px;
+  }
+  .block .body {
+    flex-direction: column;
+  }
+  .block h2,
+  .block h3 {
+    font-size: 30px;
+  }
+  .block p {
+    font-size: 20px;
+  }
+  .block .body .left {
+    width: 90%;
+  }
+  .started p {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  /* *{
+overflow: hidden;
+  } */
+  .header {
+    padding: 20px 0;
+    margin: 0;
+  }
+  .header .nav {
+    width: 70%;
+    font-size: 16px;
+  }
+  .header .nav a {
+    margin: 0 15px;
+  }
+  .header .logo {
+    left: -30px;
+    top: -40px;
+    width: 200px;
+  }
+  .main {
+    flex-direction: column;
+  }
+  .main div {
+    text-align: center;
+  }
+  .nav ul {
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 15px 80px;
+  }
+  .nav ul li {
+    margin: 15px 0;
+  }
+  .block {
+    width: 100%;
+  }
+  .block .head {
+    width: 100%;
+    padding: 15px;
+  }
+  .block .body {
+    width: 100%;
+    padding: 15px;
+  }
+  .started {
+    padding: 30px 0;
+  }
+  .started p {
+    font-size: 20px;
+  }
+  .download_btn {
+    font-size: 18px;
+  }
+  .discover {
+    padding: 30px 0;
+  }
 }
