@@ -19,8 +19,8 @@ function ConfirmedPass() {
           <div className="form">
             <input type="password" placeholder="New Password" />
             <input type="password" placeholder="Confirmed Password" />
-            <button className="action_btn">Next</button>
-          </div>
+            <Link to="/" className="action_btn">Next</Link>
+            </div>
         </div>
       </div>
     </>

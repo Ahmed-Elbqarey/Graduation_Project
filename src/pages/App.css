@@ -116,7 +116,7 @@ body {
   font-size: 19px;
   cursor: pointer;
 }
-.nav a{
+.nav a {
   text-decoration: none;
   color: black;
 }
@@ -279,7 +279,7 @@ overflow: hidden;
   .nav ul {
     width: 100%;
     flex-wrap: wrap;
-    padding: 15px 45px;
+    padding: 15px 30px;
   }
   .nav ul li {
     margin: 15px;
@@ -307,14 +307,14 @@ overflow: hidden;
   .discover {
     padding: 30px 0;
   }
-  .container{
+  .container {
     width: 100%;
     flex-direction: column;
   }
-  .container .parent{
+  .container .parent {
     width: 100%;
   }
-  .container img{
+  .container img {
     width: 80%;
   }
 }
