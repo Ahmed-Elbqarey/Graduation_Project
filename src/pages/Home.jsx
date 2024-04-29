@@ -28,7 +28,7 @@ function Home() {
       </div>
       <div className="nav">
         <ul>
-          <li>
+          <li> 
             <a href="#key">key benefits</a>
           </li>
           <li>
