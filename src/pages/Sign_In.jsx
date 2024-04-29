@@ -17,7 +17,7 @@ function SignIn() {
   const [errors, setErrors] = useState({
     email: "",
     password: "",
-  });
+  }); 
 
   const [loading, setLoading] = useState(false); // State for loading state
   const [generalError, setGeneralError] = useState(""); // State for general error message
