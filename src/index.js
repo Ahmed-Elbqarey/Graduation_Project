@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import { Link } from "react-router-dom";
 import App from "./App";
 import Home from "./pages/Home";
 import SignUp from "./pages/Sign_Up";
@@ -17,7 +18,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    errorElement: <h1>oops!</h1>,
+    errorElement: 
+    <div className="not_found">
+    <h1>oops!</h1>
+    <p>Page Not Found,  <Link to='./'>Go Home</Link></p>
+    </div>,
   },
   {
     path: "/signup",
@@ -39,10 +44,10 @@ const router = createBrowserRouter([
     path: "/newpass",
     element: <NewPass />,
   },
-  {
-    path: "/confirmePassword",
-    element: <ConfirmedPass />,
-  },
+  // {
+  //   path: "/confirmePassword",
+  //   element: <ConfirmedPass />,
+  // },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

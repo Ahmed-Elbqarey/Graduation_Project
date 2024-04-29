@@ -4,6 +4,7 @@ import watch from "../images/watch.png";
 import vr from "../images/vr.jpeg";
 import { Link } from "react-router-dom";
 function Home() {
+  document.title="Home"
   return (
     <>
       <div className="header">
