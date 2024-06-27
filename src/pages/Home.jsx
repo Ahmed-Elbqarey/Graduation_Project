@@ -3,8 +3,13 @@ import logo from "../images/logo-removebg-preview.png";
 import watch from "../images/watch.png";
 import vr from "../images/vr.jpeg";
 import { Link } from "react-router-dom";
+import Facebook from "../component/iconsSvg/facebook";
+import Twitter from "../component/iconsSvg/twitter";
+import Google from "../component/iconsSvg/google";
+import LinkedInIcon from "../component/iconsSvg/linkedin";
+import YouTubeIcon from "../component/iconsSvg/youtube";
 function Home() {
-  document.title="Home"
+  document.title = "Home";
   return (
     <>
       <div className="header">
@@ -28,7 +33,7 @@ function Home() {
       </div>
       <div className="nav">
         <ul>
-          <li> 
+          <li>
             <a href="#key">key benefits</a>
           </li>
           <li>
@@ -38,7 +43,7 @@ function Home() {
             <a href="#started">getting started</a>
           </li>
           <li>
-            <a href="#more">discover more</a>
+            <a href="#faqs">faqs</a>
           </li>
         </ul>
       </div>
@@ -121,13 +126,53 @@ function Home() {
         </p>
         <button className="download_btn">download</button>
       </div>
-      <div className="discover" id="more">
+      {/* <div className="discover" id="more">
         <h3>discover more</h3>
         <p>
           Get the latest news and information about Edu Verse features and
           releases.
         </p>
         <button className="blog_btn">blog</button>
+      </div> */}
+      <div className="faqs" id="faqs">
+        <h3>faqs</h3>
+        <p>Frequently asked questions</p>
+      </div>
+      <div className="quations">
+        <h4> <span className="num">1/ </span> which devices support edu verse?</h4>
+        <h4> <span className="num">2/ </span> How do i join immersive space in edu?</h4>
+        <h4> <span className="num">3/ </span> How do i join meeting as an avatar?</h4>
+      </div>
+      <div className="footer">
+        <div className="media_links">
+          <div className="icons">
+            <Facebook />
+            <Twitter />
+            <Google />
+            <LinkedInIcon />
+            <YouTubeIcon />
+          </div>
+
+          <div className="nav">
+            <ul>
+              <li>
+                <a href="#key">Key Benifits</a>
+              </li>
+              <li>
+                <a href="#features">features</a>
+              </li>
+              <li>
+                <a href="#started">started</a>
+              </li>
+              <li>
+                <a href="#faqs">Faqs</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="copy_right">
+        Copyright &copy; 2024; Designed by <span style={{color:"gray"}}>EDUVERSE Team</span>
+        </div>
       </div>
     </>
   );
