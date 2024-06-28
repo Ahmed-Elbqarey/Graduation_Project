@@ -98,11 +98,14 @@ body {
 .download_btn {
   font-size: 22px;
   padding: 12px 30px;
-  margin-top: 25px;
   text-transform: uppercase;
   border: none;
   background-color: #4d4deb;
   color: white;
+  text-decoration: none;
+  display: block;
+  width: fit-content;
+  margin: 25px auto;
 }
 .nav ul {
   display: flex;

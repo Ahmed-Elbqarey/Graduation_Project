@@ -14,6 +14,7 @@ import ConfirmedPass from "./pages/ConfirmedPassword";
 import Settings from './pages/Settings'
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import DownloadPage from "./pages/download";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
   {
     path: "/settings",
     element: <Settings />,
+  },
+  {
+    path: "/download",
+    element: <DownloadPage />,
   },
   // {
   //   path: "/confirmePassword",

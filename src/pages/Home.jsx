@@ -45,7 +45,7 @@ function Home() {
           <img src={logo} alt="logo" className="logo" />
         </div>
         <div className="nav">
-          <a href="#">download edu verse</a>
+          <a href="/download">download edu verse</a>
           {isLoggedIn ? (
             <div className="user-menu">
               <span>{username}</span>
@@ -66,7 +66,7 @@ function Home() {
           <p>
             Connect with your colleagues with avatars and immersive 3D spaces.
           </p>
-          <button className="download_btn">download</button>
+          <a href="/download" className="download_btn">download</a>
         </div>
       </div>
       <div className="nav">
@@ -162,7 +162,7 @@ function Home() {
           Download now and unlock a world of immersive experiences, entirely
           free of charge.
         </p>
-        <button className="download_btn">download</button>
+        <a href="/download" className="download_btn">download</a>
       </div>
       <div className="faqs" id="faqs">
         <h3>faqs</h3>
