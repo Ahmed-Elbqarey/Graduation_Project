@@ -8,11 +8,16 @@ import Swal from "sweetalert2";
 
 function SignUp() {
   document.title = "Sign Up";
+
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
     confirmPassword: "",
+    day: "",
+    month: "",
+    year: "",
+    gender: "",
   });
 
   const [errors, setErrors] = useState({
@@ -20,6 +25,10 @@ function SignUp() {
     email: "",
     password: "",
     confirmPassword: "",
+    day: "",
+    month: "",
+    year: "",
+    gender: "",
   });
 
   const [loading, setLoading] = useState(false); // State for loading state
@@ -71,6 +80,43 @@ function SignUp() {
       newErrors.confirmPassword = "Passwords do not match";
     }
 
+    if (!formData.day) {
+      formValid = false;
+      newErrors.day = "Day is required";
+    } else if (
+      !/^\d{1,2}$/.test(formData.day) ||
+      formData.day < 1 ||
+      formData.day > 31
+    ) {
+      formValid = false;
+      newErrors.day = "Day is invalid";
+    }
+
+    if (!formData.month) {
+      formValid = false;
+      newErrors.month = "Month is required";
+    } else if (
+      !/^\d{1,2}$/.test(formData.month) ||
+      formData.month < 1 ||
+      formData.month > 12
+    ) {
+      formValid = false;
+      newErrors.month = "Month is invalid";
+    }
+
+    if (!formData.year) {
+      formValid = false;
+      newErrors.year = "Year is required";
+    } else if (!/^\d{4}$/.test(formData.year)) {
+      formValid = false;
+      newErrors.year = "Year is invalid";
+    }
+
+    if (!formData.gender) {
+      formValid = false;
+      newErrors.gender = "Gender is required";
+    }
+
     if (!formValid) {
       setErrors(newErrors);
       return;
@@ -87,9 +133,16 @@ function SignUp() {
           username: formData.username,
           email: formData.email,
           password: formData.password,
+          birthdate: `${formData.year}-${formData.month.padStart(
+            2,
+            "0"
+          )}-${formData.day.padStart(2, "0")}`,
+          gender: formData.gender,
         }
       );
-      console.log(response.data); // Log the response from the server
+
+      // Store username in localStorage
+      localStorage.setItem("username", formData.username);
 
       // Optionally, clear the form after successful submission
       setFormData({
@@ -97,6 +150,10 @@ function SignUp() {
         email: "",
         password: "",
         confirmPassword: "",
+        day: "",
+        month: "",
+        year: "",
+        gender: "",
       });
 
       // Show success message
@@ -168,7 +225,7 @@ function SignUp() {
             />
             {errors.confirmPassword && (
               <p className="error">{errors.confirmPassword}</p>
-            )}  
+            )}
             <input
               onChange={handleChange}
               type="password"
@@ -177,6 +234,80 @@ function SignUp() {
               placeholder="Confirm Password"
               className={errors.confirmPassword ? "error" : ""}
             />
+
+            <h3>Birthday</h3>
+            <div className="birthdate">
+              <div>
+                {errors.day && <p className="error">{errors.day}</p>}
+                <label htmlFor="day">Day</label>
+                <input
+                  onChange={handleChange}
+                  type="number"
+                  name="day"
+                  value={formData.day}
+                  min="1"
+                  max="31"
+                  placeholder=""
+                  className={errors.day ? "error" : ""}
+                />
+              </div>
+              <div>
+                {errors.month && <p className="error">{errors.month}</p>}
+                <label htmlFor="month">Month</label>
+                <input
+                  onChange={handleChange}
+                  type="number"
+                  name="month"
+                  value={formData.month}
+                  min="1"
+                  max="12"
+                  placeholder=""
+                  className={errors.month ? "error" : ""}
+                />
+              </div>
+              <div>
+                {errors.year && <p className="error">{errors.year}</p>}
+                <label htmlFor="year">Year</label>
+                <input
+                  onChange={handleChange}
+                  type="number"
+                  name="year"
+                  value={formData.year}
+                  min="1900"
+                  max="2100"
+                  placeholder=""
+                  className={errors.year ? "error" : ""}
+                />
+              </div>
+            </div>
+
+            <h3>Gender</h3>
+            <br />
+            <div className="gender">
+              {errors.gender && <p className="error">{errors.gender}</p>}
+              <div>
+                <label htmlFor="male">Male</label>
+                <input
+                  type="radio"
+                  name="gender"
+                  id="male"
+                  value="male"
+                  checked={formData.gender === "male"}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="female">Female</label>
+                <input
+                  type="radio"
+                  name="gender"
+                  id="female"
+                  value="female"
+                  checked={formData.gender === "female"}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
 
             <button type="submit" className="action_btn" disabled={loading}>
               {loading ? "Loading..." : "Next"}

@@ -46,15 +46,15 @@ function SignIn() {
       formValid = false;
       newErrors.password = "Password is required";
     }
-
+    
     if (!formValid) {
       setErrors(newErrors);
       return;
     }
-
+    
     // Set loading state
     setLoading(true);
-
+    
     try {
       // Send data to the server
       const response = await axios.post(
@@ -66,6 +66,7 @@ function SignIn() {
       );
       const token = response.data;
       console.log(token);
+      console.log(response);
       // Optionally, clear the form after successful submission
       setFormData({
         email: "",

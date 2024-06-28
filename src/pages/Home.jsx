@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./App.css";
 import logo from "../images/logo-removebg-preview.png";
 import watch from "../images/watch.png";
@@ -8,8 +10,34 @@ import Twitter from "../component/iconsSvg/twitter";
 import Google from "../component/iconsSvg/google";
 import LinkedInIcon from "../component/iconsSvg/linkedin";
 import YouTubeIcon from "../component/iconsSvg/youtube";
+
 function Home() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState("User Name"); // الاسم الافتراضي إذا لم يتم تسجيل الدخول
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check if user is logged in (example of using localStorage for authentication)
+    const user = localStorage.getItem("username");
+    if (user) {
+      setIsLoggedIn(true);
+      setUsername(user);
+    }
+  }, []);
+
   document.title = "Home";
+
+  const handleLogout = () => {
+    // أضف منطق تسجيل الخروج هنا (مثل تنظيف بيانات المستخدم من الحالة، localStorage، إلخ)
+    setIsLoggedIn(false);
+    localStorage.removeItem("username"); // حذف اسم المستخدم من localStorage عند تسجيل الخروج
+    navigate("/signin")
+  };
+
+  const handleSettings = () => {
+    navigate("/settings"); // الانتقال إلى صفحة الإعدادات
+  };
+
   return (
     <>
       <div className="header">
@@ -18,7 +46,17 @@ function Home() {
         </div>
         <div className="nav">
           <a href="#">download edu verse</a>
-          <Link to="/signin">SignIn</Link>
+          {isLoggedIn ? (
+            <div className="user-menu">
+              <span>{username}</span>
+              <div className="dropdown-menu">
+                <button onClick={handleSettings}>Settings</button>
+                <button onClick={handleLogout}>Logout</button>
+              </div>
+            </div>
+          ) : (
+            <Link to="/signin">SignIn</Link>
+          )}
         </div>
       </div>
       <div className="main">
@@ -126,22 +164,23 @@ function Home() {
         </p>
         <button className="download_btn">download</button>
       </div>
-      {/* <div className="discover" id="more">
-        <h3>discover more</h3>
-        <p>
-          Get the latest news and information about Edu Verse features and
-          releases.
-        </p>
-        <button className="blog_btn">blog</button>
-      </div> */}
       <div className="faqs" id="faqs">
         <h3>faqs</h3>
         <p>Frequently asked questions</p>
       </div>
       <div className="quations">
-        <h4> <span className="num">1/ </span> which devices support edu verse?</h4>
-        <h4> <span className="num">2/ </span> How do i join immersive space in edu?</h4>
-        <h4> <span className="num">3/ </span> How do i join meeting as an avatar?</h4>
+        <h4>
+          {" "}
+          <span className="num">1/ </span> which devices support edu verse?
+        </h4>
+        <h4>
+          {" "}
+          <span className="num">2/ </span> How do i join immersive space in edu?
+        </h4>
+        <h4>
+          {" "}
+          <span className="num">3/ </span> How do i join meeting as an avatar?
+        </h4>
       </div>
       <div className="footer">
         <div className="media_links">
@@ -171,7 +210,8 @@ function Home() {
           </div>
         </div>
         <div className="copy_right">
-        Copyright &copy; 2024; Designed by <span style={{color:"gray"}}>EDUVERSE Team</span>
+          Copyright &copy; 2024; Designed by{" "}
+          <span style={{ color: "gray" }}>EDUVERSE Team</span>
         </div>
       </div>
     </>
