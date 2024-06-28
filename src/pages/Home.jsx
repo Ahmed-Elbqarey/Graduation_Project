@@ -30,7 +30,7 @@ function Home() {
   const handleLogout = () => {
     // أضف منطق تسجيل الخروج هنا (مثل تنظيف بيانات المستخدم من الحالة، localStorage، إلخ)
     setIsLoggedIn(false);
-    localStorage.removeItem("username"); // حذف اسم المستخدم من localStorage عند تسجيل الخروج
+    // localStorage.removeItem("username"); // حذف اسم المستخدم من localStorage عند تسجيل الخروج
     navigate("/signin")
   };
 

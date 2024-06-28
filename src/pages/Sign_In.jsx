@@ -4,20 +4,22 @@ import { Link } from "react-router-dom";
 import Angle from "../component/Svg";
 import logo from "../images/logo-removebg-preview.png";
 import "./App.css";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 function SignIn() {
   document.title = "Sign In";
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
- 
+
   const [errors, setErrors] = useState({
     email: "",
     password: "",
-  }); 
+  });
 
   const [loading, setLoading] = useState(false); // State for loading state
   const [generalError, setGeneralError] = useState(""); // State for general error message
@@ -46,15 +48,15 @@ function SignIn() {
       formValid = false;
       newErrors.password = "Password is required";
     }
-    
+
     if (!formValid) {
       setErrors(newErrors);
       return;
     }
-    
+
     // Set loading state
     setLoading(true);
-    
+
     try {
       // Send data to the server
       const response = await axios.post(
@@ -72,20 +74,21 @@ function SignIn() {
         email: "",
         password: "",
       });
-      Swal.fire({
-        icon: "success",
-        title: "Success",
-        text: "You are logged in successfully",
-      });
+      // Swal.fire({
+      //   icon: "success",
+      //   title: "Success",
+      //   text: "You are logged in successfully",
+      // });
       // Clear the general error message
       setGeneralError("");
       // setTimeout(() => {
       //   window.location.href = "/";
       // }, 3000);
+      navigate("/");
     } catch (error) {
       console.error("Error:", error);
-        // Set loading state
-    setLoading(false);
+      // Set loading state
+      setLoading(false);
       // Handle login errors
       if (error.response && error.response.status === 401) {
         setGeneralError("Invalid email or password");

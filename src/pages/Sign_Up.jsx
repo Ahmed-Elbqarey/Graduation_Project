@@ -161,7 +161,7 @@ function SignUp() {
 
       setTimeout(() => {
         window.location.href = "/signin";
-      }, 3000);
+      }, 2000);
     } catch (error) {
       // Set loading state
       setLoading(false);
