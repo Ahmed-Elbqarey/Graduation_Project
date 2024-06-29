@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ProfileSettings.css";
 import logo from "../images/logo-removebg-preview.png";
-import profile_image from '../images/profile_image.jpg'
+import profile_image from "../images/profile_image.jpg";
 
 function ProfileSettings() {
   document.title = "Profile Settings";
@@ -42,13 +42,21 @@ function ProfileSettings() {
   return (
     <div className="profile-settings-container">
       <header className="profile-settings-header">
-        <img src={logo} alt="Edu Verse Logo" className="profile-settings-logo" />
+        <a href="/">
+          <img
+            src={logo}
+            alt="Edu Verse Logo"
+            className="profile-settings-logo"
+          />
+        </a>
         <div>
-        <button className="profile-settings-download">Download EDU VERSE</button>
-      <img src={profile_image} className="profile_image" alt="" />
+          <button className="profile-settings-download">
+            Download EDU VERSE
+          </button>
+          <img src={profile_image} className="profile_image" alt="" />
         </div>
       </header>
-      
+
       <div className="profile-settings-content">
         <div className="profile-photo-section">
           <img src={profile_image} alt="Profile" className="profile-photo" />

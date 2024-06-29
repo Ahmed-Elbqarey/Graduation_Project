@@ -31,7 +31,7 @@ function Home() {
     // أضف منطق تسجيل الخروج هنا (مثل تنظيف بيانات المستخدم من الحالة، localStorage، إلخ)
     setIsLoggedIn(false);
     // localStorage.removeItem("username"); // حذف اسم المستخدم من localStorage عند تسجيل الخروج
-    navigate("/signin")
+    navigate("/signin");
   };
 
   const handleSettings = () => {
@@ -42,7 +42,9 @@ function Home() {
     <>
       <div className="header">
         <div className="logo_parent">
-          <img src={logo} alt="logo" className="logo" />
+          <a href="/">
+            <img src={logo} alt="logo" className="logo" />
+          </a>
         </div>
         <div className="nav">
           <a href="/download">download edu verse</a>
@@ -66,7 +68,9 @@ function Home() {
           <p>
             Connect with your colleagues with avatars and immersive 3D spaces.
           </p>
-          <a href="/download" className="download_btn">download</a>
+          <a href="/download" className="download_btn">
+            download
+          </a>
         </div>
       </div>
       <div className="nav">
@@ -162,7 +166,9 @@ function Home() {
           Download now and unlock a world of immersive experiences, entirely
           free of charge.
         </p>
-        <a href="/download" className="download_btn">download</a>
+        <a href="/download" className="download_btn">
+          download
+        </a>
       </div>
       <div className="faqs" id="faqs">
         <h3>faqs</h3>
@@ -171,15 +177,21 @@ function Home() {
       <div className="quations">
         <h4>
           {" "}
-          <span className="num">1/ </span> which devices support edu verse?
+          <a href="/">
+            <span className="num">1/ </span> which devices support edu verse?
+          </a>
+        </h4>
+        <h4>
+          <a href="/">
+            <span className="num">2/ </span> How do i join immersive space in
+            edu?
+          </a>{" "}
         </h4>
         <h4>
           {" "}
-          <span className="num">2/ </span> How do i join immersive space in edu?
-        </h4>
-        <h4>
-          {" "}
-          <span className="num">3/ </span> How do i join meeting as an avatar?
+          <a href="/">
+            <span className="num">3/ </span> How do i join meeting as an avatar?
+          </a>
         </h4>
       </div>
       <div className="footer">

@@ -208,10 +208,9 @@ body {
   margin-top: 60px;
 }
 .faqs {
-  text-align: center;
   background-color: #4e4feb;
   margin-top: 30px;
-  padding: 30px;
+  padding: 30px 100px;
 }
 .faqs h3 {
   color: white;
@@ -222,16 +221,20 @@ body {
   text-transform: capitalize;
   font-size: 18px;
 }
+
 .quations .num {
   font-size: 22px;
   color: #4d4deb;
 }
 .quations {
-  padding: 30px;
-  text-align: center;
+  padding: 30px 100px;
   text-transform: capitalize;
   line-height: 1.8;
   font-size: 18px;
+}
+.quations a{
+  text-decoration: none;
+  color: black;
 }
 .media_links {
   padding: 10px;

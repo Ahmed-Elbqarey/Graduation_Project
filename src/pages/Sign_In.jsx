@@ -105,7 +105,9 @@ function SignIn() {
         <Angle />
       </Link>
       <div className="container">
-        <img src={logo} alt="" />
+        <a href="/">
+          <img src={logo} alt="" style={{width : "400px"}}/>
+        </a>
         <div className="parent">
           <div className="top">
             <h2>Sign in</h2>

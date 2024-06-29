@@ -1,5 +1,7 @@
 .download-page-container {
   font-family: Arial, sans-serif;
+  width: 90%;
+  margin: auto;
 }
 
 .download-page-header {
@@ -41,8 +43,7 @@
   flex-direction: row;
   padding: 100px 80px;
   background-color: #c2dcf2;
-  width: 90%;
-  margin: auto;
+
 }
 
 .text-section {
