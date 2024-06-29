@@ -60,15 +60,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 50px 20px;
+  /* padding: 40px 50px 20px; */
 }
-.header .logo_parent {
+/* .header .logo_parent {
   position: relative;
-}
+} */
 .header .logo {
-  width: 250px;
-  position: absolute;
-  top: -55px;
+  height: 120px;
+  width: 200px;
+  /* position: absolute;
+  top: -55px; */
 }
 .header a {
   text-decoration: none;
@@ -113,7 +114,7 @@ body {
   align-items: center;
   width: 80%;
   margin: auto;
-  padding: 50px;
+  padding: 20px;
   list-style: none;
   text-transform: capitalize;
   font-size: 19px;
@@ -233,7 +234,7 @@ body {
   font-size: 18px;
 }
 .media_links {
-  padding: 30px;
+  padding: 10px;
   background-color: #c2dcf2;
 }
 .media_links .icons {
@@ -241,7 +242,8 @@ body {
   width: fit-content;
 }
 .media_links .icons svg {
-  width: 150px;
+  width: 70px;
+  margin: 0 30px;
 }
 .copy_right {
   background-color: #4e4feb;
@@ -257,9 +259,9 @@ body {
   .block {
     width: 90%;
   }
-  .block .body {
-    /* flex-direction: column; */
-  }
+  /* .block .body {
+    flex-direction: column;
+  } */
 }
 @media (max-width: 880px) {
   .header img {
@@ -425,7 +427,7 @@ body {
   justify-content: space-between;
   padding: 20px;
 }
-.birthdate div{
+.birthdate div {
   text-align: center;
 }
 .birthdate label {
@@ -438,7 +440,7 @@ body {
   height: 40px;
   border-radius: 5px;
 }
-.gender{
+.gender {
   padding: 0 0 30px 0;
   display: flex;
   justify-content: space-evenly;
