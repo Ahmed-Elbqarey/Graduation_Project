@@ -46,37 +46,37 @@ function DownloadPage() {
             />
           </div>
         </div>
-        <div className="footer">
-          <div className="media_links">
-            <div className="icons">
-              <Facebook />
-              <Twitter />
-              <Google />
-              <LinkedInIcon />
-              <YouTubeIcon />
-            </div>
+      </div>
+      <div className="footer" style={{ marginTop: "50px" }}>
+        <div className="media_links">
+          <div className="icons">
+            <Facebook />
+            <Twitter />
+            <Google />
+            <LinkedInIcon />
+            <YouTubeIcon />
+          </div>
 
-            <div className="nav">
-              <ul>
-                <li>
-                  <a href="#key">Key Benifits</a>
-                </li>
-                <li>
-                  <a href="#features">features</a>
-                </li>
-                <li>
-                  <a href="#started">started</a>
-                </li>
-                <li>
-                  <a href="#faqs">Faqs</a>
-                </li>
-              </ul>
-            </div>
+          <div className="nav">
+            <ul>
+              <li>
+                <a href="#key">Key Benifits</a>
+              </li>
+              <li>
+                <a href="#features">features</a>
+              </li>
+              <li>
+                <a href="#started">started</a>
+              </li>
+              <li>
+                <a href="#faqs">Faqs</a>
+              </li>
+            </ul>
           </div>
-          <div className="copy_right">
-            Copyright &copy; 2024; Designed by{" "}
-            <span style={{ color: "gray" }}>EDUVERSE Team</span>
-          </div>
+        </div>
+        <div className="copy_right">
+          Copyright &copy; 2024; Designed by{" "}
+          <span style={{ color: "gray" }}>EDUVERSE Team</span>
         </div>
       </div>
     </>
