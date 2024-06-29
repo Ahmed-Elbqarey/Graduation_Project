@@ -170,11 +170,12 @@ function Home() {
           download
         </a>
       </div>
-      <div className="faqs" id="faqs">
+      <div className="block" id="faqs">
+        <div className="head">
         <h3>faqs</h3>
         <p>Frequently asked questions</p>
-      </div>
-      <div className="quations">
+        </div>
+      <div className="body">
         <h4>
           {" "}
           <a href="/">
@@ -193,6 +194,7 @@ function Home() {
             <span className="num">3/ </span> How do i join meeting as an avatar?
           </a>
         </h4>
+      </div>
       </div>
       <div className="footer">
         <div className="media_links">
