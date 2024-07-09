@@ -5,7 +5,6 @@ import Angle from "../component/Svg";
 import logo from "../images/logo-removebg-preview.png";
 import "./App.css";
 import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
 
 function SignIn() {
   document.title = "Sign In";
@@ -66,24 +65,16 @@ function SignIn() {
           password: formData.password,
         }
       );
-      const token = response.data;
-      console.log(token);
-      console.log(response);
+      localStorage.setItem("token", response.data.token); 
+      localStorage.setItem("id", response.data._id); 
+      localStorage.setItem("email", response.data.email); 
       // Optionally, clear the form after successful submission
       setFormData({
         email: "",
         password: "",
       });
-      // Swal.fire({
-      //   icon: "success",
-      //   title: "Success",
-      //   text: "You are logged in successfully",
-      // });
       // Clear the general error message
       setGeneralError("");
-      // setTimeout(() => {
-      //   window.location.href = "/";
-      // }, 3000);
       navigate("/");
     } catch (error) {
       console.error("Error:", error);
@@ -94,10 +85,23 @@ function SignIn() {
         setGeneralError("Invalid email or password");
       } else {
         setGeneralError("Server error. Please try again later.");
-        // Swal.fire("Error", "Server error. Please try again later.", "error");
       }
     }
   };
+
+  // Example of login function storing token in localStorage
+// const handleLogin = async (credentials) => {
+//   const response = await fetch("http://localhost:3000/api/auth/login", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(credentials),
+//   });
+//   const data = await response.json();
+//   localStorage.setItem("token", data.token); // Store token in localStorage
+// };
+
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ProfileSettings.css";
 import logo from "../images/logo-removebg-preview.png";
 import profile_image from "../images/profile_image.jpg";
@@ -7,10 +7,10 @@ function ProfileSettings() {
   document.title = "Profile Settings";
 
   const [formData, setFormData] = useState({
-    fullName: "AHMED MOHAMED ALI",
-    birthDate: "8/7/2001",
-    email: "AHMED3320@F-ENG.TANTA.EDU.EG",
-    password: "************",
+    fullName: "",
+    birthDate: "",
+    email: "",
+    password: "************", // Placeholder for password
   });
 
   const [isEditing, setIsEditing] = useState({
@@ -20,6 +20,33 @@ function ProfileSettings() {
     password: false,
   });
 
+  useEffect(() => {
+    // Fetch user data from the API when the component mounts
+    fetchUserData();
+  }, []);
+
+  const fetchUserData = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/user/profile", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem('token')}` // Assuming token is stored in localStorage
+        }
+      });
+      // console.log(response)
+      const data = await response.json();
+      setFormData({
+        fullName: data.fullName,
+        birthDate: new Date(data.dob).toLocaleDateString(), // Format date as needed
+        email: data.email,
+        password: "************", // Do not fetch actual password
+      });
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+  };
+
   const handleEdit = (field) => {
     setIsEditing({ ...isEditing, [field]: !isEditing[field] });
   };
@@ -28,15 +55,34 @@ function ProfileSettings() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSave = () => {
-    setIsEditing({
-      fullName: false,
-      birthDate: false,
-      email: false,
-      password: false,
-    });
-    // Here you can add logic to save the updated data, e.g., sending it to the server
-    console.log("Data saved:", formData);
+  const handleSave = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/user/profile", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem('token')}` // Assuming token is stored in localStorage
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          gender: "male" // Add other fields as needed
+        }),
+      });
+      if (response.ok) {
+        console.log("Data saved:", formData);
+        setIsEditing({
+          fullName: false,
+          birthDate: false,
+          email: false,
+          password: false,
+        });
+      } else {
+        console.error("Error saving data");
+      }
+    } catch (error) {
+      console.error("Error saving data:", error);
+    }
   };
 
   return (
